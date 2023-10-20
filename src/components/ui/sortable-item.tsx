@@ -4,7 +4,6 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { usePread } from "../Pread";
 import { IconContext } from "react-icons";
-import PreadToolTip from "./pread-tooltip";
 import { Button } from "./button";
 import { MdDragIndicator } from "react-icons/md";
 import DropdownMenu from "./dropdown-menu";
@@ -41,7 +40,7 @@ function SortableItem({
   index,
 }: Props) {
   const { attributes, listeners, setNodeRef, transform, transition } =
-    useSortable({ id: id });
+    useSortable({ id: id, animateLayoutChanges: () => false });
   const { isDesktop } = usePread();
 
   const style = {
@@ -54,7 +53,6 @@ function SortableItem({
       className={`relative flex items-center gap-2 `}
       ref={setNodeRef}
       onClick={() => {
-        console.log("clicked");
         setGeneratedNewItems((prev) => prev.filter((i) => i !== item.id));
         setItems((prev) =>
           prev
@@ -81,22 +79,20 @@ function SortableItem({
         } capitalize z-50 w-full h-8 rounded-lg flex justify-between items-center `}
       >
         <div className="flex text-start gap-2 items-center justify-start">
-          <PreadToolTip tip="drag to order list">
-            <div
-              className={`hover:cursor-grab active:cursor-grabbing `}
-              {...listeners}
+          <div
+            className={`hover:cursor-grab active:cursor-grabbing `}
+            {...listeners}
+          >
+            <IconContext.Provider
+              value={{
+                className: `${
+                  item.isActive ? "text-orange-400" : "text-foreground"
+                } text-lg`,
+              }}
             >
-              <IconContext.Provider
-                value={{
-                  className: `${
-                    item.isActive ? "text-orange-400" : "text-foreground"
-                  } text-lg`,
-                }}
-              >
-                <MdDragIndicator />
-              </IconContext.Provider>
-            </div>{" "}
-          </PreadToolTip>
+              <MdDragIndicator />
+            </IconContext.Provider>
+          </div>{" "}
           <span>{item.name}</span>
         </div>
         {isDesktop && (

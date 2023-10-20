@@ -60,10 +60,13 @@ function DraggableButtons({ items, setItems, onSet }: Props) {
   // DnD SortItems
   function handleSortItems(e: DragEndEvent) {
     const { active, over } = e;
+
     if (active.id !== over?.id) {
-      const oldIndex = items.findIndex((item) => item.id === active.id);
-      const newIndex = items.findIndex((item) => item.id === over?.id);
-      setItems((items) => arrayMove(items, oldIndex, newIndex));
+      setItems((items) => {
+        const oldIndex = items.findIndex((item) => item.id === active.id);
+        const newIndex = items.findIndex((item) => item.id === over?.id);
+        return arrayMove(items, oldIndex, newIndex);
+      });
     }
   }
 
@@ -125,13 +128,13 @@ function DraggableButtons({ items, setItems, onSet }: Props) {
       onDragEnd={handleSortItems}
       modifiers={[restrictToVerticalAxis]}
     >
-      {items.map((item, index) => (
-        <SortableContext items={items} strategy={verticalListSortingStrategy}>
+      <SortableContext items={items} strategy={verticalListSortingStrategy}>
+        {items.map((item, index) => (
           <SortableItem
             id={item.id}
             item={item}
-            setGeneratedNewItems={setGeneratedNewItems}
             setItems={setItems}
+            setGeneratedNewItems={setGeneratedNewItems}
             index={index}
             itemsGenerating={itemsGenerating}
             generatedNewItems={generatedNewItems}
@@ -139,8 +142,8 @@ function DraggableButtons({ items, setItems, onSet }: Props) {
             handleResetItem={handleResetItem}
             handleDeleteItem={handleDeleteItem}
           />
-        </SortableContext>
-      ))}
+        ))}
+      </SortableContext>
     </DndContext>
   );
 }
