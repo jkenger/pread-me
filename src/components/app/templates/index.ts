@@ -1,4 +1,4 @@
-export const DOCUMENTATION_TEMPLATE = `
+export const PROJECT_TEMPLATE = `
 ![Banner](https://github.com/jkenger/jobify/blob/main/client/src/assets/images/banner.png?raw=true)
 
 # Jobify: Personal Job Tracker
