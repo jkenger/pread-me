@@ -28,8 +28,9 @@ function AddContentButton() {
   }
 
   const submit = () => {
+    const id = uuidv4() as unknown as number;
     const newSection: IPread = {
-      id: Number(uuidv4()),
+      id: id,
       name: value,
       type: PreadType.CUSTOM,
       originalContent: `## ${value}`,
