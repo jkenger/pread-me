@@ -14,7 +14,6 @@ import {
 } from "./dialog";
 import { Input } from "./input";
 import { usePread } from "../Pread";
-import { v4 as uuidv4 } from "uuid";
 import { IPread, PreadType } from "../types";
 
 function AddContentButton() {
@@ -28,7 +27,7 @@ function AddContentButton() {
   }
 
   const submit = () => {
-    const id = uuidv4() as unknown as number;
+    const id = crypto.randomUUID() as unknown as number;
     const newSection: IPread = {
       id: id,
       name: value,
