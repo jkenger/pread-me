@@ -78,14 +78,6 @@ export const CONTENTS = [
     isActive: 0,
   },
   {
-    id: 223,
-    type: PreadType.TEMPLATES,
-    name: "portfolio",
-    originalContent: DOCUMENTATION_TEMPLATE,
-    content: DOCUMENTATION_TEMPLATE,
-    isActive: 0,
-  },
-  {
     id: 2,
     type: PreadType.TEMPLATES,
     name: "profile",
