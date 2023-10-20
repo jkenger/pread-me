@@ -1,4 +1,3 @@
-import React from "react";
 import { BsStars } from "react-icons/bs";
 
 function AiGenerating() {
