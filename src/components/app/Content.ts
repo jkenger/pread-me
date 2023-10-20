@@ -72,7 +72,7 @@ export const CONTENTS = [
   {
     id: 1,
     type: PreadType.TEMPLATES,
-    name: "documentation",
+    name: "project",
     originalContent: DOCUMENTATION_TEMPLATE,
     content: DOCUMENTATION_TEMPLATE,
     isActive: 0,
