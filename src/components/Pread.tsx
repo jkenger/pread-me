@@ -58,7 +58,6 @@ function Pread() {
     [],
     "pread"
   );
-  console.log(selectedContentLists);
 
   const [templates, setTemplates] = useState(
     // remove ids from selectedContentLists

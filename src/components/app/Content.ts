@@ -31,6 +31,7 @@ import {
   ROADMAP,
   RUNNING_TESTS,
   RUN_LOCALLY,
+  SCREENSHOTS,
   SUPPORT,
   TECH,
   TITLE_AND_DESC_TEMPLATE,
@@ -321,8 +322,8 @@ export const CONTENTS = [
     id: 31,
     type: PreadType.SECTIONS,
     name: "screenshots",
-    originalContent: SUPPORT,
-    content: SUPPORT,
+    originalContent: SCREENSHOTS,
+    content: SCREENSHOTS,
     isActive: 0,
   },
   {
@@ -355,6 +356,14 @@ export const CONTENTS = [
     name: "used by",
     originalContent: USED_BY,
     content: USED_BY,
+    isActive: 0,
+  },
+  {
+    id: 36,
+    type: PreadType.SECTIONS,
+    name: "support",
+    originalContent: SUPPORT,
+    content: SUPPORT,
     isActive: 0,
   },
 ];

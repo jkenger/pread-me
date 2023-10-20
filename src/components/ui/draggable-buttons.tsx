@@ -131,6 +131,7 @@ function DraggableButtons({ items, setItems, onSet }: Props) {
       <SortableContext items={items} strategy={verticalListSortingStrategy}>
         {items.map((item, index) => (
           <SortableItem
+            key={item.id}
             id={item.id}
             item={item}
             setItems={setItems}
