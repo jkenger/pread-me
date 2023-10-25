@@ -23,26 +23,14 @@ function CodeEditorContainer() {
             wordWrap: "on",
           }}
           onChange={(e) => {
-            setSelectedContentLists((prev: IPread[]) =>
-              prev.map((item: IPread) =>
-                item.isActive ? { ...item, content: e } : item
-              )
+            setSelectedContentLists(
+              (prev: IPread[]) =>
+                prev.map((item: IPread) =>
+                  item.isActive ? { ...item, content: e } : item
+                ) as IPread[]
             );
           }}
         />
-        {/* <ReactCodeMirror
-          value={selectedContentLists.find((item) => item.isActive)?.content}
-          theme="light"
-          className="border rounded-md"
-          extensions={[javascript({ jsx: true }), EditorView.lineWrapping]}
-          onChange={(e) => {
-            setSelectedContentLists((prev: IPread[]) =>
-              prev.map((item: IPread) =>
-                item.isActive ? { ...item, content: e } : item
-              )
-            );
-          }}
-        /> */}
       </div>
     </div>
   );
