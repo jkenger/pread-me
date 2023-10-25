@@ -34,7 +34,7 @@ function Landing() {
             </Link>
           </div>
           <div className="mt-16 max-w-4xl px-4">
-            <div className="rounded-lg border border-gray-400 border-opacity-50 shadow-md">
+            <div className="rounded-lg  border-opacity-50 shadow-md">
               <img src={landingImg} alt="landing-img" className="rounded-lg" />
             </div>
           </div>
