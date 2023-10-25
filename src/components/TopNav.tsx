@@ -1,5 +1,5 @@
 import { downloadtoMd } from "@/lib/readme";
-import { AiOutlineDownload } from "react-icons/ai";
+import { AiOutlineFileMarkdown } from "react-icons/ai";
 import { usePread } from "./Pread";
 import { BsSquareHalf } from "react-icons/bs";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
@@ -31,10 +31,13 @@ function TopNav() {
       </div>
       <div>
         <div
-          className="text-lg hover:cursor-pointer"
+          className="text-lg hover:cursor-pointer flex items-center justify-center gap-1"
           onClick={() => downloadtoMd(markdown)}
         >
-          <AiOutlineDownload />
+          <AiOutlineFileMarkdown />
+          <span className="text-xs border px-2 py-1 rounded-lg bg-red-400 text-white">
+            Download
+          </span>
         </div>
       </div>
     </nav>
