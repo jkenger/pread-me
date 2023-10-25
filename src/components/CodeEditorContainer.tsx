@@ -1,6 +1,5 @@
-import ReactCodeMirror, { EditorView } from "@uiw/react-codemirror";
-import { javascript } from "@codemirror/lang-javascript";
 import { usePread } from "./Pread";
+import Editor from "@monaco-editor/react";
 
 import { IPread } from "./types";
 
@@ -15,7 +14,23 @@ function CodeEditorContainer() {
         ></div>
       </div>
       <div id="code-editor" className="md:h-[80vh] overflow-auto border">
-        <ReactCodeMirror
+        <Editor
+          value={selectedContentLists.find((item) => item.isActive)?.content}
+          theme="vs-dark"
+          className="border rounded-md"
+          language="markdown"
+          options={{
+            wordWrap: "on",
+          }}
+          onChange={(e) => {
+            setSelectedContentLists((prev: IPread[]) =>
+              prev.map((item: IPread) =>
+                item.isActive ? { ...item, content: e } : item
+              )
+            );
+          }}
+        />
+        {/* <ReactCodeMirror
           value={selectedContentLists.find((item) => item.isActive)?.content}
           theme="light"
           className="border rounded-md"
@@ -27,7 +42,7 @@ function CodeEditorContainer() {
               )
             );
           }}
-        />
+        /> */}
       </div>
     </div>
   );
