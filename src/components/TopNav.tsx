@@ -35,7 +35,7 @@ function TopNav() {
           onClick={() => downloadtoMd(markdown)}
         >
           <AiOutlineFileMarkdown />
-          <span className="text-xs border px-2 py-1 rounded-lg bg-red-400 text-white">
+          <span className="text-xs px-2 py-1 rounded-lg bg-orange-400 text-white">
             Download
           </span>
         </div>
