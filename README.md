@@ -47,7 +47,7 @@ To get started with Pread.me, follow these simple steps:
 
 4. **Start the App:** Launch the application with `npm run dev`, and access it via your web browser.
 
-5. **Begin Tracking:** Start adding and managing your job applications, and explore the insights offered by the statistics page.
+5. **Begin Editing:** Start editing and managing your github template, and explore the tools and utilities pread.me provide.
 
 ## Credit
 
